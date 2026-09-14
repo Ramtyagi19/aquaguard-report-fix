@@ -142,7 +142,7 @@ function Results() {
                 <TableCell className="text-xs">{d.dimensions}</TableCell>
                 <TableCell className="text-right">
                   <Button variant="ghost" size="sm" asChild>
-                    <Link to="/results/$id" params={{ id: d.id }}>
+                    <Link to="/anomaly/$id" params={{ id: d.id }}>
                       Open <ArrowUpRight className="size-3.5" />
                     </Link>
                   </Button>
