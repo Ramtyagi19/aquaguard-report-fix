@@ -10,33 +10,141 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as DashboardRouteImport } from './routes/dashboard'
+import { Route as HistoryRouteImport } from './routes/history'
+import { Route as MapRouteImport } from './routes/map'
+import { Route as ProcessingRouteImport } from './routes/processing'
+import { Route as ReportRouteImport } from './routes/report'
+import { Route as ResultsRouteImport } from './routes/results'
+import { Route as UploadRouteImport } from './routes/upload'
+import { Route as AnomalyIdRouteImport } from './routes/anomaly.$id'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DashboardRoute = DashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HistoryRoute = HistoryRouteImport.update({
+  id: '/history',
+  path: '/history',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MapRoute = MapRouteImport.update({
+  id: '/map',
+  path: '/map',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProcessingRoute = ProcessingRouteImport.update({
+  id: '/processing',
+  path: '/processing',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReportRoute = ReportRouteImport.update({
+  id: '/report',
+  path: '/report',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResultsRoute = ResultsRouteImport.update({
+  id: '/results',
+  path: '/results',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const UploadRoute = UploadRouteImport.update({
+  id: '/upload',
+  path: '/upload',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AnomalyIdRoute = AnomalyIdRouteImport.update({
+  id: '/anomaly/$id',
+  path: '/anomaly/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/dashboard': typeof DashboardRoute
+  '/history': typeof HistoryRoute
+  '/map': typeof MapRoute
+  '/processing': typeof ProcessingRoute
+  '/report': typeof ReportRoute
+  '/results': typeof ResultsRoute
+  '/upload': typeof UploadRoute
+  '/anomaly/$id': typeof AnomalyIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/dashboard': typeof DashboardRoute
+  '/history': typeof HistoryRoute
+  '/map': typeof MapRoute
+  '/processing': typeof ProcessingRoute
+  '/report': typeof ReportRoute
+  '/results': typeof ResultsRoute
+  '/upload': typeof UploadRoute
+  '/anomaly/$id': typeof AnomalyIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/dashboard': typeof DashboardRoute
+  '/history': typeof HistoryRoute
+  '/map': typeof MapRoute
+  '/processing': typeof ProcessingRoute
+  '/report': typeof ReportRoute
+  '/results': typeof ResultsRoute
+  '/upload': typeof UploadRoute
+  '/anomaly/$id': typeof AnomalyIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/dashboard'
+    | '/history'
+    | '/map'
+    | '/processing'
+    | '/report'
+    | '/results'
+    | '/upload'
+    | '/anomaly/$id'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/dashboard'
+    | '/history'
+    | '/map'
+    | '/processing'
+    | '/report'
+    | '/results'
+    | '/upload'
+    | '/anomaly/$id'
+  id:
+    | '__root__'
+    | '/'
+    | '/dashboard'
+    | '/history'
+    | '/map'
+    | '/processing'
+    | '/report'
+    | '/results'
+    | '/upload'
+    | '/anomaly/$id'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  DashboardRoute: typeof DashboardRoute
+  HistoryRoute: typeof HistoryRoute
+  MapRoute: typeof MapRoute
+  ProcessingRoute: typeof ProcessingRoute
+  ReportRoute: typeof ReportRoute
+  ResultsRoute: typeof ResultsRoute
+  UploadRoute: typeof UploadRoute
+  AnomalyIdRoute: typeof AnomalyIdRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +156,75 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/dashboard': {
+      id: '/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof DashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/history': {
+      id: '/history'
+      path: '/history'
+      fullPath: '/history'
+      preLoaderRoute: typeof HistoryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/map': {
+      id: '/map'
+      path: '/map'
+      fullPath: '/map'
+      preLoaderRoute: typeof MapRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/processing': {
+      id: '/processing'
+      path: '/processing'
+      fullPath: '/processing'
+      preLoaderRoute: typeof ProcessingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/report': {
+      id: '/report'
+      path: '/report'
+      fullPath: '/report'
+      preLoaderRoute: typeof ReportRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/results': {
+      id: '/results'
+      path: '/results'
+      fullPath: '/results'
+      preLoaderRoute: typeof ResultsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/upload': {
+      id: '/upload'
+      path: '/upload'
+      fullPath: '/upload'
+      preLoaderRoute: typeof UploadRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/anomaly/$id': {
+      id: '/anomaly/$id'
+      path: '/anomaly/$id'
+      fullPath: '/anomaly/$id'
+      preLoaderRoute: typeof AnomalyIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  DashboardRoute: DashboardRoute,
+  HistoryRoute: HistoryRoute,
+  MapRoute: MapRoute,
+  ProcessingRoute: ProcessingRoute,
+  ReportRoute: ReportRoute,
+  ResultsRoute: ResultsRoute,
+  UploadRoute: UploadRoute,
+  AnomalyIdRoute: AnomalyIdRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
