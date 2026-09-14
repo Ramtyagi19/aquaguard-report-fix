@@ -23,7 +23,7 @@ export const Route = createFileRoute("/processing")({
       },
     ],
   }),
-  component: Processing;
+  component: Processing,
 });
 
 function Processing() {
