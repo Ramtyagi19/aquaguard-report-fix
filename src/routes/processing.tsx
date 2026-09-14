@@ -81,7 +81,7 @@ function Processing() {
                 ) : (
                   <Loader2 className="size-4 animate-spin text-primary" />
                 )}
-                {done ? "Analysis complete" : pipelineStages[Math.min(stage, 5)].label}
+                {done ? "Analysis complete" : pipelineStages[Math.min(stage, 5)]?.label}
               </span>
               <span className="font-mono tabular-nums text-primary">{progress}%</span>
             </div>
