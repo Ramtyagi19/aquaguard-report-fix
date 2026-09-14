@@ -21,7 +21,7 @@ export const Route = createFileRoute("/map")({
       },
     ],
   }),
-  component: GeoMap;
+  component: GeoMap,
 });
 
 function GeoMap() {
